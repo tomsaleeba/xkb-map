@@ -1,0 +1,8 @@
+19c19
+<     key  <TAB> {	[ backslash,	ISO_Left_Tab	]	};
+---
+>     key  <TAB> {	[ Tab,	ISO_Left_Tab	]	};
+22c22
+<     key <CAPS> {	[ Tab		]	};
+---
+>     key <CAPS> {	[ Caps_Lock		]	};

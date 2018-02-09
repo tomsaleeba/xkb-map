@@ -42,7 +42,7 @@ service keyboard-setup restart
 udevadm trigger --subsystem-match=input --action=change
 ```
 ...but that doesn't work for me. Using the following does work though:
-```
+```bash
 sudo dpkg-reconfigure keyboard-configuration
 ```
 Alternatively, a full X restart will make the changes take effect to. You might be able to use `ctrl+alt+backspace` to restart X.
@@ -51,7 +51,7 @@ After the reload, the unshifted caps lock key should be a tab, and shifted it sh
 
 
 You can get altgr+j=home and altgr+l=end by editing `/usr/share/X11/xkb/symbols/us` with the following patch:
-```
+```patch
 39c39
 <     key <AC07> {	[	  j,	J, Home		]	};
 ---
@@ -63,3 +63,7 @@ You can get altgr+j=home and altgr+l=end by editing `/usr/share/X11/xkb/symbols/
 ```
 
 Then you need to know your AltGr key. Run `sudo dpkg-reconfigure keyboard-configuration` and select an AltGr key. After, you'll have the mapped keys.
+
+# New map or modify
+
+It's probably better to create a new map (TODO figure out how to do that) and switch to it, so you don't destroy the base map incase you have to revert. If you also use a keyboard with programmable keys, you'll probably mess that up because you've remapped the scan codes. Having a separate map will let you quickly switch mappings to suit the keyboard.
