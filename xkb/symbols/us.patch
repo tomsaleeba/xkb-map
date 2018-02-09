@@ -1,0 +1,8 @@
+39c39
+<     key <AC07> {	[	  j,	J, Home		]	};
+---
+>     key <AC07> {	[	  j,	J		]	};
+41c41
+<     key <AC09> {	[	  l,	L, End		]	};
+---
+>     key <AC09> {	[	  l,	L		]	};
